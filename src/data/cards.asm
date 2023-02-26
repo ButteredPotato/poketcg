@@ -232,6 +232,7 @@ CardPointers::
 	dw PokemonFluteCard
 	dw GamblerCard
 	dw RecycleCard
+	dw DucklettCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10222,3 +10223,57 @@ RecycleCard:
 	dw RecycleEffectCommands ; effect commands
 	tx RecycleDescription ; description
 	dw NONE ; description (cont)
+	
+	
+DucklettCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx DucklettCardGfx ; card gfx 1
+	tx DucklettName ; card name 2
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	db DUCKLETT
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx FlapName ; 3 name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+	
+	; attack 2
+	energy 0 ; energies
+	dw NONE ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	db 1 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db WR_FIGHTING ; resistance
+	tx DuckName ; category
+	db 69 ; Pokedex number
+	db 0
+	db 12 ; level
+	db 1, 8 ; length
+	dw 12 * 10 ; weight
+	tx DucklettDescription ; description 4
+	db 19
+	
+

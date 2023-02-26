@@ -2991,3 +2991,6 @@ TextOffsets::
 	textpointer GamblerDescription                                 ; 0x0bab
 	textpointer RecycleName                                        ; 0x0bac
 	textpointer RecycleDescription                                 ; 0x0bad
+	textpointer DucklettName                                       ; 0x0bae
+	textpointer FlapName                                           ; 0x0baf
+	textpointer DucklettDescription                                ; 0x0bb0

@@ -504,8 +504,8 @@ TitleScreenTilemap::
 	INCBIN "data/maps/tiles/title_screen.bin"
 
 TitleScreenCGBTilemap::
-	db $14 ; width
-	db $12 ; height
+	db $14 ; width (in hex, dec 20)
+	db $12 ; height (in hex, dec 18)
 	dw NULL
 	db TRUE ; cgb mode
 	INCBIN "data/maps/tiles/title_screen_cgb.bin"

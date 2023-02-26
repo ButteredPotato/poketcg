@@ -500,7 +500,7 @@ PracticePlayerDeck:
 	card_item PSYCHIC_ENERGY, 1
 	card_item SEAKING,        1
 	card_item STARYU,         1
-	card_item FULL_HEAL,      1
+	card_item DUCKLETT,       1
 	card_item GOLDEEN,        1
 	card_item WATER_ENERGY,   5
 	card_item DROWZEE,        1

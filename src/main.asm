@@ -160,7 +160,7 @@ INCLUDE "engine/duel/effect_functions.asm"
 SECTION "Decks", ROMX
 INCLUDE "data/decks.asm"
 
-SECTION "Cards", ROMX
+SECTION "Moved Cards", ROMX
 INCLUDE "data/cards.asm"
 
 SECTION "SGB", ROMX
@@ -168,6 +168,9 @@ INCLUDE "engine/sgb.asm"
 
 SECTION "Bank 20", ROMX
 INCLUDE "engine/bank20.asm"
+
+SECTION "Custom Gfx", ROMX
+INCLUDE "custom/gfx.asm"
 
 SECTION "Gfx", ROMX
 INCLUDE "engine/gfx/gfx_table_pointers.asm"
