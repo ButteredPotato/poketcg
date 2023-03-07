@@ -13,3 +13,7 @@ DucklettDescription:
 	line "their favorite food, peat moss,"
 	line "as they dive underwater."
 	done
+	
+TrashName:
+	text "Trash"
+	done

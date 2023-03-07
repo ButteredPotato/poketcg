@@ -4267,8 +4267,16 @@ DisplayCardPage_PokemonOverview:
 .print_numbers_and_energies
 	; print Pokedex number in the bottom right corner (16,16)
 	lb bc, 16, 16
-	ld a, [wLoadedCard1PokedexNumber]
-	call WriteTwoByteNumberInTxSymbolFormat
+	; Load the pointer to the two byte pokedex number
+	ld hl, wLoadedCard1PokedexNumber
+	; Grab the LSB of the pokedex and increment the pointer by 1 byte
+	ld a, [hli]
+	; Grab the MSB of the pokedex
+	ld h, [hl]
+	; Load the LSB into the proper register
+	ld l, a
+	; Draw the pokedex value
+	call ActuallyWriteATwoByteNumberInTxSymbolFormatFFS
 	; print the name, damage, and energy cost of each attack and/or Pokemon power that exists
 	; first attack at 5,10 and second at 5,12
 	lb bc, 5, 10
@@ -5823,6 +5831,20 @@ WriteTwoByteNumberInTxSymbolFormat:
 	push bc
 	ld l, a
 	ld h, $00
+	call TwoByteNumberToTxSymbol_TrimLeadingZeros_Bank1
+	pop bc
+	push bc
+	call BCCoordToBGMap0Address
+	ld hl, wStringBuffer + 2
+	ld b, 3
+	call SafeCopyDataHLtoDE
+	pop bc
+	pop de
+	ret
+	
+ActuallyWriteATwoByteNumberInTxSymbolFormatFFS:
+	push de
+	push bc
 	call TwoByteNumberToTxSymbol_TrimLeadingZeros_Bank1
 	pop bc
 	push bc

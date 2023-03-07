@@ -228,4 +228,33 @@
 	const GAMBLER                     ; $e3
 	const RECYCLE                     ; $e4
 	const DUCKLETT                    ; $e5
+	const TRASH0                      ; $e6
+	const TRASH1                      ; $e7
+	const TRASH2                      ; $e8
+	const TRASH3                      ; $e9
+	const TRASH4                      ; $ea
+	const TRASH5                      ; $eb
+	const TRASH6                      ; $ec
+	const TRASH7                      ; $ed
+	const TRASH8                      ; $ee
+	const TRASH9                      ; $ef
+	const TRASH10                     ; $f0
+	const TRASH11                     ; $f1
+	const TRASH12                     ; $f2
+	const TRASH13                     ; $f3
+	const TRASH14                     ; $f4
+	const TRASH15                     ; $f5
+	const TRASH16                     ; $f6
+	const TRASH17                     ; $f7
+	const TRASH18                     ; $f8
+	const TRASH19                     ; $f9
+	const TRASH20                     ; $fa
+	const TRASH21                     ; $fb
+	const TRASH22                     ; $fc
+	const TRASH23                     ; $fd
+	const TRASH24                     ; $fe
+	const TRASH25                     ; $ff
+	const TRASH26                     ; $000
+	const TRASH27                     ; $001
+	
 DEF NUM_CARDS EQU const_value - 1

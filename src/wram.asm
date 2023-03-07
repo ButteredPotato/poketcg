@@ -151,7 +151,18 @@ wOtherIRCommunicationParams:: ; c5ef
 wCardPopNameSearchResult:: ; c5f3
 	ds $1
 
-	ds $c
+; pointer from PracticeDuelTextPointerTable
+wPracticeDuelTextPointer:: ; cc01
+	ds $2
+
+wPracticeDuelTurn:: ; cc00
+	ds $1
+
+; during a practice duel, identifies an entry of PracticeDuelActionTable
+wPracticeDuelAction:: ; cbfe
+	ds $1
+
+	ds $8
 
 SECTION "WRAM0 Text Engine", WRAM0
 
@@ -587,19 +598,8 @@ wTempNumRemainingPrizeCards:: ; cbfc
 wPlacingInitialBenchPokemon:: ; cbfd
 	ds $1
 
-; during a practice duel, identifies an entry of PracticeDuelActionTable
-wPracticeDuelAction:: ; cbfe
-	ds $1
-
 wcbff:: ; cbff
 	ds $1
-
-wPracticeDuelTurn:: ; cc00
-	ds $1
-
-; pointer from PracticeDuelTextPointerTable
-wPracticeDuelTextPointer:: ; cc01
-	ds $2
 
 ; used to print a Pokemon card's length in feet and inches
 wPokemonLengthPrintOffset:: ; cc03

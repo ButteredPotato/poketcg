@@ -2994,3 +2994,4 @@ TextOffsets::
 	textpointer DucklettName                                       ; 0x0bae
 	textpointer FlapName                                           ; 0x0baf
 	textpointer DucklettDescription                                ; 0x0bb0
+	textpointer TrashName                                          ; 0x0bb1

@@ -4,7 +4,7 @@ MACRO card_data_struct
 \1Name::          ds 2
 \1Rarity::        ds 1
 \1Set::           ds 1
-\1ID::            ds 1
+\1ID::            ds 2
 \1EffectCommands:: ; ds 2
 \1HP::            ds 1
 \1Stage::         ds 1
@@ -16,7 +16,7 @@ MACRO card_data_struct
 \1Weakness::      ds 1
 \1Resistance::    ds 1
 \1Category::      ds 2
-\1PokedexNumber:: ds 1
+\1PokedexNumber:: ds 2
 \1Unknown1::      ds 1
 \1Level::         ds 1
 \1Length::        ds 2

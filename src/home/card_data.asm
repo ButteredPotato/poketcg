@@ -142,10 +142,15 @@ GetCardTypeRarityAndSet::
 GetCardPointer::
 	push de
 	push bc
+	; Load LSB from E into HL LSB(L)
 	ld l, e
-	ld h, $0
+	; Load MSB from D into HL MSB(H)
+	ld h, d
+	; each card pointer is two bytes, so 2x the ID is the offset
 	add hl, hl
+	; Load a pointer to the start of the card table into bc
 	ld bc, CardPointers
+	; Add the start pointer to the offset
 	add hl, bc
 	ld a, h
 	cp HIGH(CardPointers + 2 + (2 * NUM_CARDS))
@@ -153,8 +158,8 @@ GetCardPointer::
 	ld a, l
 	cp LOW(CardPointers + 2 + (2 * NUM_CARDS))
 .nz
-	ccf
-	jr c, .out_of_bounds
+	ccf  ; complement (C)arry flag, flip the value of the (C)arry flag. If this is set, one of the two previous comparisons(cp) resulted in a less than max, so we know its not out of bounds.
+	jr c, .out_of_bounds ; If the (C)arry flag is set after the CCF, meaning our comparisons resulted in greater than, jump to out of bounds
 	ld a, BANK(CardPointers)
 	call BankpushROM2
 	ld a, [hli]
